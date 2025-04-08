@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Medicine Information Website. Search and know about medicines easily like Paracetamol, Ibuprofen, Antibiotics, Diabetes Medicines, Blood Pressure Medicines, Allergy Medicines, Vaccines.">
+    <meta name="keywords" content="Medicine Information, Medicine Search, Dawai Details, Health Info, Paracetamol, Antibiotics, Diabetes Medicines, BP Medicines, Allergy Tablets, Vaccines">
+    <meta name="author" content="Medicine Information Website">
+    <title>Medicine Information</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            padding: 12px;
+            width: 320px;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #info {
+            margin-top: 20px;
+            font-size: 28px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 700px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-top: 100px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Home Page -->
+    <h1>Welcome to Medicine Information</h1>
+    <p>Find details about medicines quickly and easily.</p>
+
+    <a href="#medicineInfo">
+        <button>Go to Medicine Info</button>
+    </a>
+
+    <!-- Medicine Search Section -->
+    <div class="section" id="medicineInfo">
+        <h1>Medicine Information</h1>
+
+        <input type="text" id="medicineName" placeholder="Write the medicine name here">
+        <button onclick="getMedicineInfo()">Search</button>
+
+        <div id="info"></div>
+    </div>
+
+<script>
+    function getMedicineInfo() {
+        var name = document.getElementById('medicineName').value.toLowerCase();
+        var infoDiv = document.getElementById('info');
+
+        var medicines = {
+            'paracetamol': 'Used for fever and pain relief.',
+            'ibuprofen': 'Used for pain, inflammation, and fever.',
+            'aspirin': 'Pain reliever, anti-inflammatory, blood thinner.',
+            'diclofenac': 'Strong pain killer for joint pain.',
+            'naproxen': 'Pain relief and anti-inflammatory.',
+            'amoxicillin': 'Antibiotic used for bacterial infections.',
+            'azithromycin': 'Powerful antibiotic for infections.',
+            'ciprofloxacin': 'Used for bacterial infections.',
+            'doxycycline': 'Broad spectrum antibiotic.',
+            'metronidazole': 'Used for stomach and dental infections.',
+            'losartan': 'Used to control blood pressure.',
+            'amlodipine': 'For BP and heart-related conditions.',
+            'metoprolol': 'Used for BP control.',
+            'lisinopril': 'BP and heart failure treatment.',
+            'hydrochlorothiazide': 'BP control and diuretic.',
+            'metformin': 'Controls blood sugar levels.',
+            'insulin': 'Hormone used for diabetes control.',
+            'humulin': 'Insulin brand for diabetes.',
+            'lantus': 'Long-acting insulin.',
+            'novolog': 'Fast-acting insulin.',
+            'glimepiride': 'Oral diabetes medicine.',
+            'empagliflozin': 'Helps remove sugar through urine.',
+            'sertraline': 'Used for depression and anxiety.',
+            'fluoxetine': 'Used for depression and OCD.',
+            'escitalopram': 'Used for mood disorders.',
+            'venlafaxine': 'For depression and anxiety.',
+            'omeprazole': 'Used for acidity and ulcers.',
+            'ranitidine': 'For acidity and heartburn.',
+            'pantoprazole': 'Reduces stomach acid.',
+            'domperidone': 'Used for nausea and stomach pain.',
+            'cetirizine': 'For allergies and cold.',
+            'loratadine': 'Used for skin allergies.',
+            'fexofenadine': 'For allergy and itching.',
+            'diphenhydramine': 'Used for cold, allergy, and sleep aid.',
+            'pfizer-biontech': 'COVID-19 Vaccine.',
+            'covishield': 'COVID-19 Vaccine (AstraZeneca).',
+            'hepatitis b vaccine': 'Protection against Hepatitis B.',
+            'mmr': 'Vaccine for Measles, Mumps, Rubella.'
+        };
+
+        if (medicines[name]) {
+            infoDiv.innerHTML = "Information: " + medicines[name];
+        } else {
+            infoDiv.innerHTML = "Medicine not found in the database.";
+        }
+    }
+</script>
+
+</body>
+</html>
